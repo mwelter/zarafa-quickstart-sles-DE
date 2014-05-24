@@ -16,6 +16,9 @@
         <section>
           <h1>Zarafa Quickstart Manual</h1>
           <p>The fastest way to get started with Zarafa from scratch</p>
+          <aside class="notes">
+			  Test speakernotes in web console
+		  </aside>
         </section>
         <section>
           <h2>How to use this manual?</h2>
@@ -29,11 +32,14 @@
 			  <li>You can press the ESC key to get an overview of all slides</li>
 			  <li>If you like you can also print this presentation (works best with Chrome)</li>
           </ul>
+          <aside class="notes">
+			  Some additional information are displayed in the web console of the browser. This comes in handy if these slides are used as part of a training.
+		  </aside>
         </section>
         <section>
 			<h2>Agenda 1/2</h2>
 			<ul>
-				<li><a href="#aim">Aim of this manual</a></li>
+				<li><a href="#/aim">Aim of this manual</a></li>
 				<li>Some background on Zarafa</li>
 				<li>Installing Zarafa and Z-Push</li>
 				<li>Basic configuration</li>
@@ -76,6 +82,15 @@
       theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
       transition: 'linear'
         });
+     </script>
+     <script>
+      Reveal.addEventListener( 'slidechanged', function( event ) {
+		  // event.previousSlide, event.currentSlide, event.indexh, event.indexv
+		  var notes = event.currentSlide.querySelector(".notes");
+		  if(notes) {
+			  console.info(notes.innerHTML.replace(/\n\s+/g,'\n'));
+		  }
+      } );
     </script>
   </body>
 </html>
