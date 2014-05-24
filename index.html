@@ -6,9 +6,25 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
       <link rel="stylesheet" href="css/reveal.min.css">
       <link rel="stylesheet" href="css/theme/default.css" id="theme">
+      <!--Add support for earlier versions of Internet Explorer -->
+	  <!--[if lt IE 9]>
+	  <script src="lib/js/html5shiv.js"></script>
+	  <![endif]-->
+      
+      <!-- For syntax highlighting -->
+      <link rel="stylesheet" href="lib/css/zenburn.css">
+      
+      <!-- If the query includes 'print-pdf', include the PDF print sheet -->
       <script>
-		  document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-	  </script>
+		  if (window.location.search.match(/print-pdf/gi)) {
+			  var link = document.createElement('link');
+			  
+			  link.rel = 'stylesheet';
+			  link.type = 'text/css';
+			  link.href = 'css/print/pdf.css';
+			  document.getElementsByTagName('head')[0].appendChild(link);
+		  }
+	   </script>
   </head>
   <body>
     <div class="reveal">
@@ -16,9 +32,6 @@
         <section>
           <h1>Zarafa Quickstart Manual</h1>
           <p>The fastest way to get started with Zarafa from scratch</p>
-          <aside class="notes">
-			  Test speakernotes in web console
-		  </aside>
         </section>
         <section>
           <h2>How to use this manual?</h2>
@@ -34,31 +47,34 @@
           </ul>
           <aside class="notes">
 			  Some additional information are displayed in the web console of the browser. This comes in handy if these slides are used as part of a training.
+			  Additionally to the shortkeys mentioned above the screen can be darkened with the "." key.
 		  </aside>
         </section>
         <section>
 			<h2>Agenda 1/2</h2>
 			<ul>
 				<li><a href="#/aim">Aim of this manual</a></li>
-				<li>Some background on Zarafa</li>
+				<li><a href="#/about">Some background on Zarafa</a></li>
 				<li>Installing Zarafa and Z-Push</li>
 				<li>Basic configuration</li>
 				<li>Configuration of third party components</li>
 				<li>Performance optimisations</li>
+				<li>Updates &amp; Upgrades</li>
 			</ul>	
         </section>
         <section>
 			<h2>Agenda 2/2</h2>
 			<ul>
-				<li>Updates &amp; Upgrades</li>
 				<li>Backing up Zarafa</li>
-				<li>Using Zarafa</li>
+				<li>Using Zarafa with ..</li>
 				<ul>
 					<li>Outlook</li>
 					<li>WebApp</li>
+					<li>mobile devices</li>
 					<li>other clients</li>
 				</ul>
 				<li>Migrating data</li>
+				<li><a href="#/help">Need more help?</a></li>
 			</ul>
         </section>
         <section id="aim">
@@ -69,6 +85,28 @@
 				<li>.. and utilising OpenLDAP for user managenemt</li>
 			</ul></p>
         </section>
+        <section id="about">
+			<section>
+				<h2>Some background on Zarafa</h2>
+			</section>
+			<section>
+				<h2>Technical background</h2>
+			</section>
+			<section>
+				<h2>Portal for customers and partners</h2>
+			</section>
+			<section>
+				<h2>Zarafa Community Hub</h2>
+			</section>
+			<section>
+				<h2>Further links and documentation</h2>
+			</section>
+        </section>
+        <section id="help">
+			<h2>Need more help?</h2>
+			<p>Additional help can be gathered from the <a href="http://forums.zarafa.com">Zarafa&nbsp;Community&nbsp;Forums</a>.</p>
+			<p>Customers with a valid subscription can open a support case at our <a href="http://porta.zarafa.com">portal</a> or acquire professional services from the <a href="mailto:info@zarafa.com">Zarafa&nbsp;sales&nbsp;team</a>.</p>
+        </section>
       </div>
     </div>
     <script src="lib/js/head.min.js"></script>
@@ -77,7 +115,7 @@
       Reveal.initialize({
       controls: true,
       progress: true,
-      history: true,
+      history: false,
       center: true,
       theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
       transition: 'linear'
