@@ -20,44 +20,19 @@
 	font-style: normal;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic);
-
-/**
- * Solarized colors by Ethan Schoonover
- */
 html * {
 	color-profile: sRGB;
 	rendering-intent: auto;
 }
 
-// Solarized colors
-$base03:    #ffffff;
-$base02:    #4d4d4c;
-$base01:    #efefef;
-$base00:    #657b83;
-$base0:     #839496;
-$base1:     #93a1a1;
-$base2:     #eee8d5;
-$base3:     #fdf6e3;
-$yellow:    #eab700;
-$orange:    #f5871f;
-$red:       #c82829;
-$magenta:   #d33682;
-$violet:    #8959a8;
-$blue:      #4271ae;
-$cyan:      #3e999f;
-$green:     #718c00;
+
 
 // Override theme settings (see ../template/settings.scss)
-$mainColor: $base1;
-$headingColor: $base2;
-$headingTextShadow: none;
-$backgroundColor: $base03;
-$linkColor: $blue;
-$linkColorHover: lighten( $linkColor, 20% );
-$selectionBackgroundColor: $magenta;
-
-
+$mainFont: 'Myriad Pro', 'PT Sans', sans-serif;
+$headingFont: 'Myriad Pro', 'PT Sans', sans-serif;
+$backgroundColor: #ffffff;
+$mainColor: #000000;
+$headingColor: #000000;
 
 // Theme template ------------------------------
 @import "../template/theme";
