@@ -1,6 +1,6 @@
 /**
- * Solarized Dark theme for reveal.js.
- * Author: Achim Staebler
+ * Zarafa theme based on Solarized Dark for reveal.js.
+ * Author: Felix Bartels
  */
 
 
@@ -13,12 +13,8 @@
 
 // Include theme-specific fonts
 @font-face {
-	font-family: 'League Gothic';
-	src: url('../../lib/font/league_gothic-webfont.eot');
-	src: url('../../lib/font/league_gothic-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('../../lib/font/league_gothic-webfont.woff') format('woff'),
-		 url('../../lib/font/league_gothic-webfont.ttf') format('truetype'),
-		 url('../../lib/font/league_gothic-webfont.svg#LeagueGothicRegular') format('svg');
+	font-family: 'PT Sans';
+	src: url('../../lib/font/PT_Sans-Web-Regular.ttf') format('truetype');
 
 	font-weight: normal;
 	font-style: normal;
@@ -35,22 +31,22 @@ html * {
 }
 
 // Solarized colors
-$base03:    #002b36;
-$base02:    #073642;
-$base01:    #586e75;
+$base03:    #ffffff;
+$base02:    #4d4d4c;
+$base01:    #efefef;
 $base00:    #657b83;
 $base0:     #839496;
 $base1:     #93a1a1;
 $base2:     #eee8d5;
 $base3:     #fdf6e3;
-$yellow:    #b58900;
-$orange:    #cb4b16;
-$red:       #dc322f;
+$yellow:    #eab700;
+$orange:    #f5871f;
+$red:       #c82829;
 $magenta:   #d33682;
-$violet:    #6c71c4;
-$blue:      #268bd2;
-$cyan:      #2aa198;
-$green:     #859900;
+$violet:    #8959a8;
+$blue:      #4271ae;
+$cyan:      #3e999f;
+$green:     #718c00;
 
 // Override theme settings (see ../template/settings.scss)
 $mainColor: $base1;
