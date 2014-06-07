@@ -1,6 +1,6 @@
-zarafa-quickstart
+zarafa-quickstart-susestudio
 =================
 
-Quickstart documentation for the Zarafa Collaboration Platform (ZCP)
+Quickstart documentation for the Zarafa Collaboration Platform (ZCP) SLES Appliance
 
-Can be viewed online using http://fbartels.github.io/zarafa-quickstart
+Can be viewed online at http://fbartels.github.io/zarafa-quickstart-susestudio
