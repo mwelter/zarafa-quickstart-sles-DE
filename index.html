@@ -1,240 +1,235 @@
 <!doctype html>
 <html lang="de">
-  <head>
-    <meta charset="utf-8">
-      <title>Zarafa Quickstart SUSE Studio</title>
-      <base target="_blank">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-      <link rel="stylesheet" href="css/reveal.min.css">
-      <link rel="stylesheet" href="css/theme/zarafa.css" id="theme">
-      <!--Add support for earlier versions of Internet Explorer -->
-	  <!--[if lt IE 9]>
-	  <script src="lib/js/html5shiv.js"></script>
-	  <![endif]-->
-      
-      <!-- For syntax highlighting -->
-      <link rel="stylesheet" href="lib/css/zenburn.css">
-      
-      <!-- If the query includes 'print-pdf', include the PDF print sheet -->
-      <script>
-		  if (window.location.search.match(/print-pdf/gi)) {
-			  var link = document.createElement('link');
-			  
-			  link.rel = 'stylesheet';
-			  link.type = 'text/css';
-			  link.href = 'css/print/pdf.css';
-			  document.getElementsByTagName('head')[0].appendChild(link);
-		  }
-	   </script>
-  </head>
-  <body style="background-image:url('images/Zarafa_logo_transparent.png'); background-repeat:no-repeat; background-position:right top">
-    <div class="reveal">
-      <div class="slides">
-        <section>
-          <h1>Zarafa Quickstart Manual</h1>
-          <p>Get started with the Zarafa Suse Studio Appliance!</p>
-        </section>
-        <section>
-          <h2>How to use this manual?</h2>
-          <ul>
-			  <li>Navigation is done with the arrow keys your keyboard:</li>
-			  <ul>
-				  <li>Left and right to go through the topics,</li>
-				  <li>down for more detailed information.</li>
-				  <li>But if you like you can also use the navigation in the bottom right corner or your touch screen</li>
-				  <li>or simply go through all slides with the space bar.</li>
-			  </ul>
-			  <li>You can press the ESC key to get an overview of all slides</li>
-			  <li>If you like you can also print this presentation (works best with Chrome)</li>
-          </ul>
-          <aside class="notes">
-			  Some additional information are displayed in the web console of the browser. This comes in handy if these slides are used as part of a training.
-			  Additionally to the shortkeys mentioned above the screen can be darkened with the "." or the "b" key.
-		  </aside>
-        </section>
-        <section id="aim">
-			<h2>You are about to learn ...</h2>
-			<p><ul>
-				<li>... Zarafa näher kennen</li>
-				<li>... den technischen Hintergrund von Zarafa kennen</li>
-				<li>... die VM in Betrieb nehmen</li>
-				<li>... die VM in Ihre Umgebung zu integrieren</li>
-				<li>... wie Sie Benutzer und Gruppen verwalten können</li>
-				<li>... wie Clients angebunden werden</li>
-				<li>... die Migration von Daten in Zarafa</li>
-				<li>... was beim Backup zu beachten ist</li>
-			</ul></p>
-        </section>
-        <section>
-			<h2>Agenda</h2>
-			<ul>
-				<li><a href="#/zarafa">Wer und was ist Zarafa ?</a></li>
-				<li><a href="#/techbackground">Technischer Hintergrund von Zarafa</a></li>
-				<li><a href="#/inbetriebnahme">Inbetriebnahme der VM</a></li>
-				<li><a href="#/integration">Integration der VM in die bestehende Umgebung</a></li>
-				<li><a href="#/benutzerverwaltung">Benutzerverwaltung in OpenLDAP oder ActiveDirectory</a></li>
-				<li><a href="#/clients">Clientanbindung</a></li>
-				<li><a href="#/migration">Datenmigration</a></li>
-				<li><a href="#/backup">Backup</a></li>
-				<li><a href="#/help">Need more help?</a></li>
-			</ul>
-        </section>
-        <section id="zarafa">
-				<h2>Wer ist Zarafa ?</h2>
-				<ul>
-				    <li>Zarafa B.V. [Delft / Niederlande]</li>
-				    <ul>
-					<li>gegründet 1999 in Delft/NL</li>
-					<li>Headquarter mit Entwicklung, QA, International Sales und Support</li>
-				    </ul>
-				    <li>Zarafa Deutschland GmbH [Hannover/Deutschland]</li>
-				    <ul>
-				        <li>gegründet 2006 in Hannover/D</li>
-				        <li>Vertrieb und Support für Deutschland, Österreich und Schweiz</li>
-				    </ul>
-				</ul>
-	</section>
-	<section>
-				<h2>Was ist Zarafa ?</h2>
-				<ul>
-				    <li>Offen</li>
-				    <ul>
-				        <li>Open Source Software unter AGPL seit 2006</li>
-				        <li>Offenes Design = freie Wahl der zugehörigen Komponenten</li>
-				        <li>Freie Wahl - Inhouse oder Cloud Installation</li>
-				    </ul>
-				    <li>Kompatibel</li>
-				    <ul>
-				        <li>Vollständige MAPI Implementierung</li>
-				        <li>Beste Integration in Microsoft Outlook (2003-2013)</li>
-				        <li>Z-Push (ActiveSync Protokoll) für Mobile Geräte </li>
-				        <li>HTML5 WebApp mit bekannten Features</li>
-				    </ul>
-				    <li>Enterprise</li>
-				    <ul>
-				        <li>Subskription enthält Maintainance und Support</li>
-				        <li>Einfache und schnelle Skalierung</li>
-				        <li>Hochverfügbarkeit mit Standard Linux Tools</li>
-				        <li>Vollständig Virtualisierungsfähig</li>
-				    </ul>
-				</ul>
-	</section>
-        </section>
-        
-        <section id="techbackground">
+<head>
+	<meta charset="utf-8">
+	<title>Zarafa Quickstart SUSE Studio</title>
+	<base target="_blank">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<link rel="stylesheet" href="css/reveal.min.css">
+	<link rel="stylesheet" href="css/theme/zarafa.css" id="theme">
+	<!--Add support for earlier versions of Internet Explorer -->
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+	
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+	
+	<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+	<script>
+		if (window.location.search.match(/print-pdf/gi)) {
+			var link = document.createElement('link');
+			
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = 'css/print/pdf.css';
+			document.getElementsByTagName('head')[0].appendChild(link);
+		}
+		</script>
+</head>
+<body style="background-image:url('images/Zarafa_logo_transparent.png'); background-repeat:no-repeat; background-position:right top">
+	<div class="reveal">
+		<div class="slides">
 			<section>
-				<h2>Technischer Hintergrund von Zarafa</h2>
-				<ul>
-				    <p>In diesem Kapitel lernen Sie den vollständigen technischen Hintergrund von Zarafa kennen.</p>
-				    <p>Gehen Sie dazu bitte "nach unten" um die einzelnen Folien anzusehen</p>
-				</ul>
+				<h1>Zarafa Quickstart Manual</h1>
+				<p>Get started with the Zarafa Suse Studio Appliance!</p>
 			</section>
 			<section>
-				<h2>Technischer Hintergrund (1)</h2>
+				<h2>How to use this manual?</h2>
 				<ul>
-				    <li>Zarafa ist ein auf Linux basierender Groupwareserver</li><br>
-				    <li>Zarafa verwendet als Datenmodell MAPI - wie MS-Exchange</li>
-				    <li>Daten werden in einer MySQL Datenbank gespeichert und E-Mail Attachments im Filesystem</li><br>
-				    <li>Anbindung an Outlook mit zarafaclient.msi Paket welches MAPI-Treiber in Outlook für native Anbindung an Zarafa bereitstellt</li>
-				    <li>Outlook kann Online und Offline genutzt werden</li>
+					<li>Navigation is done with the arrow keys your keyboard:</li>
+					<ul>
+						<li>Left and right to go through the topics,</li>
+						<li>down for more detailed information.</li>
+						<li>But if you like you can also use the navigation in the bottom right corner or your touch screen</li>
+						<li>or simply go through all slides with the space bar.</li>
+					</ul>
+					<li>You can press the ESC key to get an overview of all slides</li>
+					<li>If you like you can also print this presentation (works best with Chrome)</li>
+				</ul>
+				<aside class="notes">
+					Some additional information are displayed in the web console of the browser. This comes in handy if these slides are used as part of a training.
+					Additionally to the shortkeys mentioned above the screen can be darkened with the "." or the "b" key.
+				</aside>
+			</section>
+			<section id="aim">
+				<h2>You are about to learn ...</h2>
+				<p><ul>
+					<li>... what Zarafa is in general</li>
+					<li>... the technical background of every Zarafa installation</li>
+					<li>... how to get started with the VM</li>
+					<li>... how to integrate the VM into your environment</li>
+					<li>... how to manage users and groups</li>
+					<li>... how to connect the individual clients</li>
+					<li>... how to migrate your data</li>
+					<li>... how to backup your system</li>
+				</ul></p>
+			</section>
+			
+			<section>
+				<h2>Agenda</h2>
+				<ul>
+					<li><a href="#/about">Who and what is Zarafa?</a></li>
+					<li><a href="#/techbackground">Technischer Hintergrund von Zarafa</a></li>
+					<li><a href="#/inbetriebnahme">Inbetriebnahme der VM</a></li>
+					<li><a href="#/integration">Integration der VM in die bestehende Umgebung</a></li>
+					<li><a href="#/benutzerverwaltung">Benutzerverwaltung in OpenLDAP oder ActiveDirectory</a></li>
+					<li><a href="#/clients">Clientanbindung</a></li>
+					<li><a href="#/migration">Datenmigration</a></li>
+					<li><a href="#/backup">Backup</a></li>
+					<li><a href="#/help">Need more help?</a></li>
 				</ul>
 			</section>
-			<section>
-				<h2>Technischer Hintergrund (2)</h2>
-				<ul>
-				    <li>Zarafa WebApp ist ein Webclient mit ExtJS und HTML 5 Technologie
-				    und wird auf einem Apache Webserver mit PHP installiert</li>
-				    <li>Genutzt wird die Zarafa PHPMAPI Bibliothek für eine native Anbindung an den Server</li>
-				    <li>WebApp besitzt eine Pluginschnittstelle für die Erweiterung von Features oder die Integration von 3rd Party Software</li><br>
-				    <li>Z-Push ist die OpenSource Implementierung des Microsoft ActiveSync Protokoll</li>
-				    <li>Ist in PHP entwickelt, kann auf Webserver mit PHP installiert werden und bietet identische Features wie ein Exchangeserver</li>
-				</ul>
+				
+			<section id="about">
+				<section>
+					<h2>Who is Zarafa?</h2>
+					<ul>
+						<li>Zarafa B.V. [Delft/Netherlands]</li>
+						<ul>
+							<li>founded 1999</li>
+							<li>international Headquarter</li>
+							<li>Home of our developers, QA, international sales and support</li>
+						</ul>
+						<li>Zarafa Deutschland GmbH [Hanover/Germany]</li>
+						<ul>
+							<li>founded 2006</li>
+							<li>Sales and support for Germany, Austria and Switzerland</li>
+						</ul>
+					</ul>
+				</section>
+				<section>
+					<h2>What is Zarafa?</h2>
+					<h3>Open</h3>
+					<ul class="fragment">
+						<li>Open Source - AGPL since 2006</li>
+						<li>Open Design - Open Architecture</li>
+						<li>Open Choice - In-house, cloud based or both combined</li>
+					</ul>
+					<h3>Compatible</h3>
+					<ul class="fragment">
+						<li>Complete MAPI implementation</li>
+						<li>Best integration of Microsoft Outlook (2003 - 2013)</li>
+						<li>Z-Push (implements Exchange ActiveSync) for Mobile Devices</li>
+						<li>Full featured HTML5 WebApp</li>
+					</ul>
+					<h3>Enterprise</h3>
+					<ul class="fragment">
+						<li>Subscription including maintenance and support</li>
+						<li>Scales from 5 to 50.000 users (and beyond)</li>
+						<li>Enterprise level High Availability</li>
+						<li>can be completely virtualized</li>
+					</ul>
+				</section>
 			</section>
-			<section>
-				<h2>Technischer Hintergrund (3)</h2>
-				<ul>
-				    <li>E-Mailclients können per Zarafa Gateway über die Standardprotokolle IMAP und POP3 angebunden werden</li>
-				    <li>Kalenderclients nutzen das Zarafa Gateway über das Standardprotokoll CalDAV um iCal Dateien auszutauschen</li>
-				    <li>Aufgabe der Gateways ist die Übersetzung der MAPI Informationen in die entsprechenden Standards und bereitstellung der Standardprotokolle</li>
-				    <br>
-				    <li>Zukünftig (ab Zarafa 7.2.0) steht das XML basierte Protokoll "Zarafa Webservices" (ZWS) als Ersatz für das Exchange Webserviceprotokoll (EWS) für die native Anbindung von 
-				    z.B. MacOS Clients (auch Outlook für MacOS) zur Verfügung.</li>
-				</ul>
-			</section>
-			<section>
-				<h2>Technischer Hintergrund (4)</h2>
-				<ul>
-				    <li>Zarafa bringt keinen eigenen E-Mailserver mit. Nahezu jeder E-Mailserver (MTA) (z.B. Postfix, Sendmail...) kann wie zuvor konfiguriert weitergenutzt werden</li>
-				    <li>MTA übergibt nach evtl. konfigurierten Filtern für Viren/SPAM die eingehende E-Mail an den Zarafa dAgent, der die E-Mail in ein MAPI Objekt konvertiert und 
-				    ins korrekte Postfach ablegt.</li>
-				    <li>Der Versand von E-Mails wird durch den Zarafa Spooler erledigt. Er konvertiert die in den Clients abgesendeten E-Mails zu einer Standard SMTP Mail und übergibt 
-				    diese an den MTA</li>
-				    <li>Für interne E-Mails ist dadurch ebenfalls ein Virenschutz gewährleistet.</li>				    
-				</ul>
-			</section>
-			<section>
-				<h2>Technischer Hintergrund (5)</h2>
-				<ul>
-				    <li>Benutzerverwaltung kann in der MySQL Datenbank genutzt werden.</li>
-				    <li>Empfohlen ist die Verwendung eines Verzeichnisdienstes wie OpenLDAP, ActiveDirectory, eDirectory oder jeder andere LDAP basierende Verzeichnisdienst.</li>
-				    <li>Durch eine Schemaerweiterung werden die von Zarafa benötigten Informationen nutzbar gemacht.</li>
-				    <li>Zarafa greift nur lesend auf das Verzeichnis zu.</li>
-				    <li>Anbindung an LDAP wird durch Mapping-Datei individualisiert, d.h. bestehende Verzeichnisse können größtenteils ohne Änderung weitergenutzt werden</li>
-				</ul>
-			</section>
-			<section>
-				<h2>Technischer Hintergrund (6)</h2>
-				<ul>
-				    <li>Weitere Zarafa Komponenten sind:</li>
-				    <ul>
-					  <li>Zarafa-Monitor: Überwachung und Warnung von Quota Grenzen</li>
-					  <li>Zarafa-Admin: Administrationstool für Benutzer- und Gruppenverwaltung</li>
-					  <li>Zarafa-Licensed: Lizenzdämon für die Überwachung von Zarafa Subskriptionen</li>
-					  <li>Zarafa-Backup: Bricklevel Backup ermöglicht wiederherstellung einzelner Elemente</li>
-					  <li>Zarafa-Search: Indexierung der Daten (inkl. E-Mail Attachments</li>
-				</ul>
-			</section>
-			<section>
-			        <h2>Zarafa Archiver</h2>
-			        <p>Beim Zarafa Archiver handelt es sich um zusätzliches Produkt was bei Professional oder Enterprise Subskriptionen zusätzlich genutzt werden kann, und bereits 
-			        für 20 Benutzer enthalten ist.</p>
-			        <p>Ziel des Archiver ist Lastverteilung für ältere E-Mails (Zeitraum kann frei definiert werden). Diese werden auf den Archivserver durch Zarafa automatisch ausgelagt. So bleibt die Produktivdatenbank
-			        von der Größe her planbar. Der Archivserver kann mit deutlich günstigerer Hardware ausgestattet sein, da es bei alten E-Mails eher nicht auf Performance ankommt.</p>
-			</section>
-			<section>
-				<h2>Technischer Hintergrund (7)</h2>
-				<img src="images/tech.png">
-			</section>
-			<section>
-			  <h2>Abhängigkeiten (1)</h2>
-			  <ul>
-			      <li>MySQL - Server</li>
-			      <ul>
-				<li>kann sich auf Zarafa Server oder anderem Server befinden</li>
-				<li>Wenn separater Datenbankserver ist auf dem Zarafa System die MySQL Client Bibliothek erforderlich</li>
-				<li>Ab Zarafa 7.1.10 auch MariaDB offiziell unterstützt</li>
-			      </ul>
-			      <li>E-Mailserver (MTA)</li>
-			      <ul>
-			        <li>Nahezu jeder MTA nutzbar</li>
-			        <li>Empfohlen und getestet sind Postfix, Sendmail, Exim und QMail</li>
-			      </ul>
-			      <li>Apache Webserver + PHP</li>
-			      <li>libicu - wird für UTF-8 Unterstützung benötigt</li>
-			      <li>Englische Sprachpakete</li><br>
-			</ul>
-		</section>
-		<section>
-			<h2>Abhängigkeiten (2)</h2>      
-			      <p>Wenn Zarafa normal installiert wird, sind in den Downloadpaketen folgende Pakete enthalten:</p>
-			      <ul>
-				  <li>libvmime + libvmime-devel</li>
-				  <li>libical + libical-devel</li>
-			      </ul>
-			      <p>Bitte achten Sie darauf, daß ausnahmslos die mitgelieferten Pakete installiert werden.</p>
-			      <p>Wenn der Server automatisch Updates einspielt müssen diese Pakete davon ausgenommen werden.</p>
-		 </section>
-	</section>	
+			
+			<section id="techbackground">
+				<section>
+					<h2>Technischer Hintergrund von Zarafa</h2>	
+					<p>In diesem Kapitel lernen Sie den vollständigen technischen Hintergrund von Zarafa kennen.</p>
+					<p>Gehen Sie dazu bitte "nach unten" um die einzelnen Folien anzusehen</p>
+				</section>
+				<section>
+					<h2>Technischer Hintergrund (1)</h2>
+					<ul>
+						<li>Zarafa ist ein auf Linux basierender Groupwareserver</li><br>
+						<li>Zarafa verwendet als Datenmodell MAPI - wie MS-Exchange</li>
+						<li>Daten werden in einer MySQL Datenbank gespeichert und E-Mail Attachments im Filesystem</li><br>
+						<li>Anbindung an Outlook mit zarafaclient.msi Paket welches MAPI-Treiber in Outlook für native Anbindung an Zarafa bereitstellt</li>
+						<li>Outlook kann Online und Offline genutzt werden</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Technischer Hintergrund (2)</h2>
+					<ul>
+						<li>Zarafa WebApp ist ein Webclient mit ExtJS und HTML 5 Technologie und wird auf einem Apache Webserver mit PHP installiert</li>
+						<li>Genutzt wird die Zarafa PHPMAPI Bibliothek für eine native Anbindung an den Server</li>
+						<li>WebApp besitzt eine Pluginschnittstelle für die Erweiterung von Features oder die Integration von 3rd Party Software</li><br>
+						<li>Z-Push ist die OpenSource Implementierung des Microsoft ActiveSync Protokoll</li>
+						<li>Ist in PHP entwickelt, kann auf Webserver mit PHP installiert werden und bietet identische Features wie ein Exchangeserver</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Technischer Hintergrund (3)</h2>
+					<ul>
+						<li>E-Mailclients können per Zarafa Gateway über die Standardprotokolle IMAP und POP3 angebunden werden</li>
+						<li>Kalenderclients nutzen das Zarafa Gateway über das Standardprotokoll CalDAV um iCal Dateien auszutauschen</li>
+						<li>Aufgabe der Gateways ist die Übersetzung der MAPI Informationen in die entsprechenden Standards und bereitstellung der Standardprotokolle</li>
+						<br>
+						<li>Zukünftig (ab Zarafa 7.2.0) steht das XML basierte Protokoll "Zarafa Webservices" (ZWS) als Ersatz für das Exchange Webserviceprotokoll (EWS) für die native Anbindung von z.B. MacOS Clients (auch Outlook für MacOS) zur Verfügung.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Technischer Hintergrund (4)</h2>
+					<ul>
+						<li>Zarafa bringt keinen eigenen E-Mailserver mit. Nahezu jeder E-Mailserver (MTA) (z.B. Postfix, Sendmail...) kann wie zuvor konfiguriert weitergenutzt werden</li>
+						<li>MTA übergibt nach evtl. konfigurierten Filtern für Viren/SPAM die eingehende E-Mail an den Zarafa dAgent, der die E-Mail in ein MAPI Objekt konvertiert und ins korrekte Postfach ablegt.</li>
+						<li>Der Versand von E-Mails wird durch den Zarafa Spooler erledigt. Er konvertiert die in den Clients abgesendeten E-Mails zu einer Standard SMTP Mail und übergibt diese an den MTA</li>
+						<li>Für interne E-Mails ist dadurch ebenfalls ein Virenschutz gewährleistet.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Technischer Hintergrund (5)</h2>
+					<ul>
+						<li>Benutzerverwaltung kann in der MySQL Datenbank genutzt werden.</li>
+						<li>Empfohlen ist die Verwendung eines Verzeichnisdienstes wie OpenLDAP, ActiveDirectory, eDirectory oder jeder andere LDAP basierende Verzeichnisdienst.</li>
+						<li>Durch eine Schemaerweiterung werden die von Zarafa benötigten Informationen nutzbar gemacht.</li>
+						<li>Zarafa greift nur lesend auf das Verzeichnis zu.</li>
+						<li>Anbindung an LDAP wird durch Mapping-Datei individualisiert, d.h. bestehende Verzeichnisse können größtenteils ohne Änderung weitergenutzt werden</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Technischer Hintergrund (6)</h2>
+					<ul>
+						<li>Weitere Zarafa Komponenten sind:</li>
+						<ul>
+							<li>Zarafa-Monitor: Überwachung und Warnung von Quota Grenzen</li>
+							<li>Zarafa-Admin: Administrationstool für Benutzer- und Gruppenverwaltung</li>
+							<li>Zarafa-Licensed: Lizenzdämon für die Überwachung von Zarafa Subskriptionen</li>
+							<li>Zarafa-Backup: Bricklevel Backup ermöglicht wiederherstellung einzelner Elemente</li>
+							<li>Zarafa-Search: Indexierung der Daten (inkl. E-Mail Attachments</li>
+						</ul>
+					</ul>
+				</section>
+				<section>
+					<h2>Zarafa Archiver</h2>
+					<p>Beim Zarafa Archiver handelt es sich um zusätzliches Produkt was bei Professional oder Enterprise Subskriptionen zusätzlich genutzt werden kann, und bereits für 20 Benutzer enthalten ist.</p>
+					<p>Ziel des Archiver ist Lastverteilung für ältere E-Mails (Zeitraum kann frei definiert werden). Diese werden auf den Archivserver durch Zarafa automatisch ausgelagt. So bleibt die Produktivdatenbank von der Größe her planbar. Der Archivserver kann mit deutlich günstigerer Hardware ausgestattet sein, da es bei alten E-Mails eher nicht auf Performance ankommt.</p>
+				</section>
+				<section>
+					<h2>Technischer Hintergrund (7)</h2>
+					<img src="images/tech.png">
+				</section>
+				<section>
+					<h2>Abhängigkeiten (1)</h2>
+					<ul>
+						<li>MySQL - Server</li>
+						<ul>
+							<li>kann sich auf Zarafa Server oder anderem Server befinden</li>
+							<li>Wenn separater Datenbankserver ist auf dem Zarafa System die MySQL Client Bibliothek erforderlich</li>
+							<li>Ab Zarafa 7.1.10 auch MariaDB offiziell unterstützt</li>
+						</ul>
+						<li>E-Mailserver (MTA)</li>
+						<ul>
+							<li>Nahezu jeder MTA nutzbar</li>
+							<li>Empfohlen und getestet sind Postfix, Sendmail, Exim und QMail</li>
+						</ul>
+						<li>Apache Webserver + PHP</li>
+						<li>libicu - wird für UTF-8 Unterstützung benötigt</li>
+						<li>Englische Sprachpakete</li><br>
+					</ul>
+				</section>
+				<section>
+					<h2>Abhängigkeiten (2)</h2>      
+					<p>Wenn Zarafa normal installiert wird, sind in den Downloadpaketen folgende Pakete enthalten:</p>
+					<ul>
+						<li>libvmime + libvmime-devel</li>
+						<li>libical + libical-devel</li>
+					</ul>
+					<p>Bitte achten Sie darauf, daß ausnahmslos die mitgelieferten Pakete installiert werden.</p>
+					<p>Wenn der Server automatisch Updates einspielt müssen diese Pakete davon ausgenommen werden.</p>
+				</section>
+			</section>	
 
 	<section id="inbetriebnahme">
 		<section>
