@@ -1,6 +1,6 @@
-zarafa-quickstart-susestudio
+zarafa-quickstart-sles-DE
 =================
 
-Quickstart documentation for the Zarafa Collaboration Platform (ZCP) SLES Appliance
+Quickstart Training für Zarafa basierend auf der SuSE SLES Appliance
 
-Can be viewed online at http://fbartels.github.io/zarafa-quickstart-susestudio
+Direkter Einstieg in das Online Training: http://
