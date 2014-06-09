@@ -53,6 +53,7 @@
 				<li>... die VM in Ihre Umgebung zu integrieren</li>
 				<li>... wie Sie Benutzer und Gruppen verwalten können</li>
 				<li>... wie Clients angebunden werden</li>
+				<li>... wichtige Groupwarefeatures kennen</li>
 				<li>... die Migration von Daten in Zarafa</li>
 				<li>... was beim Backup zu beachten ist</li>
 			</ul></p>
@@ -66,6 +67,7 @@
 				<li><a href="#/integration">Integration der VM in die bestehende Umgebung</a></li>
 				<li><a href="#/benutzerverwaltung">Benutzerverwaltung in OpenLDAP oder ActiveDirectory</a></li>
 				<li><a href="#/clients">Clientanbindung</a></li>
+				<li><a href="#/groupware">Groupwarefeatures</a></li>
 				<li><a href="#/migration">Datenmigration</a></li>
 				<li><a href="#/backup">Backup</a></li>
 			</ul>	
@@ -515,8 +517,92 @@
 	<section id="benutzerverwaltung">
 		<h2>Benutzerverwaltung im OpenLDAP oder AD</h2>
 	</section>
+	
+	
 	<section id="clients">
-		<h2>Anbindung von Clients an Zarafa</h2>	
+		  <section>
+		      <h2>Anbindung von Clients an Zarafa</h2>	
+		      <p>Im nächsten Kapitel werden folgende Clients näher beschrieben:</p>
+		      <ul>
+			<li>Microsoft Outlook</li>
+			<li>Smartphones (iPhone, Android, ...)</li>
+			<li>Zarafa WebApp</li>
+		      </ul>
+		  </section>
+		<section>
+		    <h2>Microsoft Outlook</h2>
+		</section>
+		<section>
+		    <h2>Installation Zarafaclient</h2>
+		    <p>Das Migrationstool ist in der VM enthalten und kann vom Windowsdesktop per Webbrowser heruntergeladen und installiert werden</p>
+		    URL: <b>http://[ipadresseVM]/tools/zarafaclient-7.1.10-44973.msi</b><br><br>
+		    Der Zarafaclient muß vor allen weiteren Schritten auf dem Desktop installiert werden. Wählen Sie dazu idealerweise die vollständige Installation aus.
+		</section>
+		<section>
+		    <h2>MAPI Profil anlegen</h2>
+		    <p>Es ist nicht möglich ein Zarafa Zugriff zu einem bestehenden Outlook Profil hinzuzufügen. Um eine Verbindung herzustellen, muß erst ein neues Profil
+		    über die Systemsteuerung angelegt werden.</p>
+		    <p>Sie gehen dazu über die Systemsteuerung / E-Mail (32bit) / Profile anzeigen ...</p>
+		    <img src="images/profil.png" width="50%">
+		</section>
+		<section>
+		    <h2>Profil anlegen (1)</h2>
+		    <img src="images/profil1.png" width="60%">
+		    <p>Mit <i>Hinzufügen...</i>  fügen Sie ein neues Profil hinzu und wählen einen Namen aus.</p>
+		</section>
+		<section>
+		    <h2>Profil anlegen (2)</h2>
+		    <img src="images/profil2.png" width="60%">
+		    <p>Wählen Sie manuelle Konfiguration aus.</p>
+		</section>
+		<section>
+		    <h2>Profil anlegen (3)</h2>
+		    <img src="images/profil3.png" width="60%">
+		    <p>Bei Dienst wählen Sie unter <i>Andere</i> das Protokoll <i>Zarafa Server</i> aus.</p>
+		</section>
+		<section>
+		    <h2>Profil anlegen (4)</h2>
+		    <img src="images/profil4.png" width="60%">
+		    <p>Geben Sie nun die Zugangsdaten der VM ein. Achten Sie darauf das SSL nicht vorkonfiguriert ist. Wählen Sie dann zwishen Online oder Offline Profil.</p>
+		</section>
+		<section>
+		    <h2>Profil anlegen (5)</h2>
+		    <img src="images/profil6.png" width="60%">
+		    <p>Achten Sie bei mehreren Profilen darauf, daß das neue Profil direkt geladen wird. Alternativ wählen Sie die Frage nach dem Profil beim Outlookstart.</p>
+		</section>
+		<section>
+		    <h2>Offline Profil konfigurieren</h2>
+		    <img src="images/sync.png" width="50%">
+		    <p>Bei einem Offlineprofil können Sie die Syncronisation bei Netzwerkverbindung durch obrige Einstellungen optimieren. Neue Informationen werden dann
+		    sofort syncronisiert.</p>
+		</section>
+		<section>
+		    <h2>Smartphones</h2>
+		</section>
+		<section>
+		    <h2>Installation auf Smartphones (1)</h2>
+		    <p>Durch die Verwendung des vollständigen ActiveSync Protokolles können alle aktuellen Mobilen Endgeräte wie iPhone, Android, Windows Mobile 
+		    usw. nativ angebunden werden</p>
+		    <p>Zarafa Z-Push unterstützt alle Funktionen, evtl. unterstützen die Applikationen auf Ihrem Endgerät nicht alle Funktionen.</p>
+		    <p>Die Konfiguration erfolgt ähnlich einer Anbindung an einen Exchange Server.</p>
+		    <ul>
+		       <li>Fügen Sie in den Einstellungen ein neues <i>Exchange</i> Profil hinzu.</li>
+		       <li>Wählen Sie die manuelle Konfiguration</li>
+		       <li>Achten Sie darauf das die VM nicht per SSL erreichbar ist.</li>
+		    </ul>
+		</section>
+		<section>
+		    <h2>Installation auf Smartphones (2)</h2>
+		    
+		    
+		</section>
+	</section>
+	
+	<section id="groupware">
+	    <section>
+		<h2>Groupwarefeatures</h2>
+	    </section>
+	
 	</section>
 	
 	<section id="migration">
@@ -537,7 +623,7 @@
 		  <li>Scalix Server</li>
 		</ul>
 		<p>Das Migrationstool ist in der VM enthalten und kann vom Windowsdesktop per Webbrowser heruntergeladen und installiert werden</p>
-		URL: <b>http://[ipadresseVM]/tools/zarafamigrationstool.msi</b>
+		URL: <b>http://[ipadresseVM]/tools/zarafamigrationstool.exe</b>
 	    </section>
 		  <section>
 		    <h2>Exchangemigration (1)</h2>
