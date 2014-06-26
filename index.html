@@ -31,7 +31,7 @@
       <div class="slides">
         <section>
           <h1>Zarafa Quickstart Training</h1>
-          <p>Von 0 auf Zarafa in kürzester Zeit<br>auf Basis der SUSE SLES 11 - VM</p>
+          <p>Von 0 auf Zarafa in kürzester Zei<br>auf Basis der SUSE SLES 11 - VM</p>
         </section>
         <section>
           <h2>Wie bediene ich diese Präsentation ?</h2>
@@ -515,9 +515,99 @@
 	</section>         
 	         
 	<section id="benutzerverwaltung">
-		<h2>Benutzerverwaltung im OpenLDAP oder AD</h2>
+	     <section>
+	        <h2>Benutzerverwaltung im OpenLDAP oder AD</h2>
+	        <p>Die VM kommt mit einem vorkonfigurierten OpenLDAP Server in dem 2 Demo Benutzer bereits angelegt wurden.</p>
+	        <p>Diese Benutzer heißen demo1 und demo2 und haben als Passwort auch demo1 / demo2</p>
+	        <br><p>In diesem Kapitel wird auf die grafische Verwaltung des OpenLDAP Servers hingewiesen. Auch wird die Anbindung an ein bestehendes ActiveDirectory gezeigt.</p>
+	     </section>
+	     <section>
+	        <h2>OpenLDAP Server</h2>
+	     </section>
+	     <section>
+	        <h2>OpenLDAP Server (1)</h2>
+	        <ul>
+	          <li>Sie erreichen die Administrationsoberfläche für den OpenLDAP Server über die URL <i>http://[ipadresseVM]/phpldapadmin</i>
+	          <li>Die Zugangsdaten sind:<ul><li> Benutzer: <b>cn=admin,dc=zarafa,dc=local</b></i></li><li>Passwort: <b>zarafa</b></li></ul></li>         
+	        </ul>
+	        <img src="images/ldap1.png" width="60%">
+	     </section>
+	     <section>
+	        <h2>OpenLDAP Server (2)</h2>
+	        <ul>
+	          <li>Der LDAP Baum ist so aufgebaut, daß die Benutzer und Gruppen in separaten OUs abgelegt sind.</i>
+	          <li>In den einzelnen OUs können Sie auf <i>Neuer Eintrag erzeugen</i> klicken um Gruppen, Benutzer, Ressourcen etc. hinzuzufügen.</li>         
+	        </ul>
+	        <img src="images/ldap2.png" width="60%">
+	     </section>
+	     <section>
+	        <h2>OpenLDAP Server (3)</h2>
+	        <img src="images/ldap3.png" width="80%">
+	        <ul>
+	          <li>Für die einfachere Verwaltung sind auf Zarafa Bedürfnisse angepasste Vorlagen enthalten.</i>
+	          <li>Beim Aufruf von bestehenden Einträgen kann es sein, das eine falsche/die Standardvorlage geladen wird. Mit <b>Switch Template</b> können Sie dann die richtige auswählen.</li>
+	        </ul>
+	     </section>
+	     <section>
+	         <h2>Funktionspostfächer</h2>
+	         <p>Funktionspostfächer sind Postfächer die von mehreren Personen gleichzeitig bearbeitet werden sollen. (z.B. sales@, buchhaltung@, info@ ...)</p>
+	         <p>Mit <b>Senden als ...</b> können Sie die Benutzer mit der Berechtigung versehen, daß sie mit der E-Mailadresse des Funktionspostfaches Mails versenden können.</p>
+	     </section>
+	     <section>
+	         <h2>Gruppen</h2>
+	         <p>Es sind 2 arten von Gruppen angelegt werden. <b>Sicherheitsgruppen</b> und <b>Verteilergruppen</b>.</p>
+	         <p>Verteilergruppen sind reine E-Mailverteilergruppen.</p>
+	         <p>Sicherheitsgruppen sind sowohl E-Mailverteiler aber können auch für gruppenbezogene Rechtevergaben genutzt werden.</p>
+	     </section>
+	     <section>
+	         <h2>Benutzer</h2>
+	         <p>Benutzer können als Zarafa Administrator definiert werden. Dazu ist im Feld <b>Zarafa Administrator</b> eine <i>1</i> einzutragen.</p>
+	         <p>Administratoren beacten keine Berechtigungen und können so alle Postfächer öffnen und somit für Funktionspostfächer und Ressourcen Einstellungen und Berechtigungen vornehmen.</p>
+	     </section>
+	     <section>
+	         <h2>Ressourcen</h2>
+	         <p>Ressourcen sind z.B. Räume, Beamer, KFZ usw. die von Benutzern per Termineinladung gebucht werden können.</p>
+	         <p>Das automatische Annehmen von Termineinladungen muß auf der Kommandozeile konfiguriert werden:</p>
+	         <ul>
+	            <li>zarafa-admin --mr-accept 1 => Alle Anfragen automatisch akzeptieren</li>
+	            <li>zarafa-admin --mr-decline-conflict 1 => Bei Terminkonflikten absagen</li>
+	            <li>zarafa-admin --mr-decline-recurring 1 => Keine wiederkehrende Buchungen akzeptieren</li>
+	         </ul>
+	         <p>Für weitere Informationen möchten wir Sie auf das Unterkapitel Groupwarefunktionen verweisen</p>
+	    </section>
+	    <section>
+	        <h2>Active Directory</h2>
+	     </section>
+	     <section>
+	        <h2>AD-Schema</h2>
+	        <p>Um ein Active Directory für Zarafa zu verwenden muß eine Schemaerweiterung installiert werden. Diese ist auf der VM unter folgender URL enthalten:<p>
+	        <p><b>http://[ipadresseVM]/tools/zarafaads.exe</b></p>
+	        <p>Zur Installation müßen Sie zusätzlich Mitglied der Schemaadministratorengruppe sein.</p>
+	        <p>Nach der Installation können Sie über 2 zusätzliche Reiter in den Eigenschaften die Informationen für Zarafa einstellen.</p>
+	     </section>
+	     <section>
+	        <h2>Zarafa Konfiguration</h2>
+	        <ul>
+	          <li>Ändern Sie in der Datei <i>/etc/zarafa/server.cfg</i> den Eintrag <b>user_plugin_config = ldap.cfg</b> auf <b>user_plugin_config = ldap.active-directory.cfg</b>
+	          <li>Ändern Sie in der Datei <i>/etc/zarafa/ldap-active-directory.cfg</i> folgende Einträge:</li>
+	          <ul>
+	             <li><b>ldap_host</b> = [ipadresse des AD-Servers]</li>
+	             <li><b>ldap_bind_user</b> = cn=Administrator,cn=users,[ihre AD-Domäne wie im Beispiel]</li>
+	             <li><b>ldap_bind_passwd</b> = [Passwort des AD Administrators]</li>
+	             <li><b>ldap_search_base</b> = [Ihre AD-Domäne, wie im Beispiel]</li>
+	             <li><b>ldap_host</b> = [ipadresse des AD-Servers]</li>
+	             <li><b>ldap_user_search_filter</b> = (zarafaAccount=1)</li>
+	             <li><b>ldap_group_search_filter</b> = (zarafaAccount=1)</li>
+	          </ul>
+	        </ul>
+	     </section>
+	     <section>
+	         <h2>Zarafa Server Neustart</h2>
+	         <p>Starten Sie mit <i>service zarafa-server restart</i> den Zarafa Server neu.</p>
+	         <p>Überprüfen Sie mit <i>zarafa-admin -l</i> und <i>zarafa-admin -L</i> ob alle Benutzer und Gruppen verfügbar sind.</p>
+	     </section>
 	</section>
-	
+		
 	
 	<section id="clients">
 		  <section>
