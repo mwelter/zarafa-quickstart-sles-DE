@@ -31,7 +31,7 @@
       <div class="slides">
         <section>
           <h1>Zarafa Quickstart Training</h1>
-          <p>Von 0 auf Zarafa in kürzester Zei<br>auf Basis der SUSE SLES 11 - VM</p>
+          <p>Von 0 auf Zarafa in kürzester Zeit<br>auf Basis der SUSE SLES 11 - VM</p>
         </section>
         <section>
           <h2>Wie bediene ich diese Präsentation ?</h2>
@@ -345,7 +345,7 @@
 		<section>
 		      <h2>Mails von Mailserver abholen</h2>
 		      <ul>   
-		         <li>Um E-Mails von einem fremden Server abzoholen, kann Fetchmail genutzt werden.</li>
+		         <li>Um E-Mails von einem fremden Server abzuholen, kann Fetchmail genutzt werden.</li>
 		         <li>Werden E-Mails direkt an die VM zugestellt, muß keine weitere Konfiguration erfolgen.</li>
 		         <li>Fetchmail ist auf Abholung alle 60 Sekunden vorkonfiguriert</li>
 		         <li>Konfiguration der einzelnen abzuholenden Konten in der Datei <i>/etc/fetchmailrc</i> (Beispiel nächste Folie)</li>
@@ -555,14 +555,14 @@
 	     </section>
 	     <section>
 	         <h2>Gruppen</h2>
-	         <p>Es sind 2 arten von Gruppen angelegt werden. <b>Sicherheitsgruppen</b> und <b>Verteilergruppen</b>.</p>
+	         <p>Es können 2 Arten von Gruppen angelegt werden. <b>Sicherheitsgruppen</b> und <b>Verteilergruppen</b>.</p>
 	         <p>Verteilergruppen sind reine E-Mailverteilergruppen.</p>
 	         <p>Sicherheitsgruppen sind sowohl E-Mailverteiler aber können auch für gruppenbezogene Rechtevergaben genutzt werden.</p>
 	     </section>
 	     <section>
 	         <h2>Benutzer</h2>
 	         <p>Benutzer können als Zarafa Administrator definiert werden. Dazu ist im Feld <b>Zarafa Administrator</b> eine <i>1</i> einzutragen.</p>
-	         <p>Administratoren beacten keine Berechtigungen und können so alle Postfächer öffnen und somit für Funktionspostfächer und Ressourcen Einstellungen und Berechtigungen vornehmen.</p>
+	         <p>Administratoren beachten keine Berechtigungen und können so alle Postfächer öffnen und somit für Funktionspostfächer und Ressourcen Einstellungen und Berechtigungen vornehmen.</p>
 	     </section>
 	     <section>
 	         <h2>Ressourcen</h2>
@@ -630,7 +630,7 @@
 		</section>
 		<section>
 		    <h2>MAPI Profil anlegen</h2>
-		    <p>Es ist nicht möglich ein Zarafa Zugriff zu einem bestehenden Outlook Profil hinzuzufügen. Um eine Verbindung herzustellen, muß erst ein neues Profil
+		    <p>Es ist nicht möglich ein Zarafa Profil zu einem bestehenden Outlook Profil hinzuzufügen. Um eine Verbindung herzustellen, muß immer erst ein neues Profil
 		    über die Systemsteuerung angelegt werden.</p>
 		    <p>Sie gehen dazu über die Systemsteuerung / E-Mail (32bit) / Profile anzeigen ...</p>
 		    <img src="images/profil.png" width="50%">
@@ -653,7 +653,7 @@
 		<section>
 		    <h2>Profil anlegen (4)</h2>
 		    <img src="images/profil4.png" width="60%">
-		    <p>Geben Sie nun die Zugangsdaten der VM ein. Achten Sie darauf das SSL nicht vorkonfiguriert ist. Wählen Sie dann zwishen Online oder Offline Profil.</p>
+		    <p>Geben Sie nun die Zugangsdaten der VM ein. Sie können zwischen unverschlüsselter oder SSL verschlüsselter Verbindung wählen. Abschließend entweder Online oder Offline Profil auswählen.</p>
 		</section>
 		<section>
 		    <h2>Profil anlegen (5)</h2>
@@ -663,8 +663,8 @@
 		<section>
 		    <h2>Offline Profil konfigurieren</h2>
 		    <img src="images/sync.png" width="50%">
-		    <p>Bei einem Offlineprofil können Sie die Syncronisation bei Netzwerkverbindung durch obrige Einstellungen optimieren. Neue Informationen werden dann
-		    sofort syncronisiert.</p>
+		    <p>Bei einem Offlineprofil können Sie die Synchronisation bei Netzwerkverbindung durch obrige Einstellungen optimieren. Neue Informationen werden dann
+		    sofort synchronisiert.</p>
 		</section>
 		<section>
 		    <h2>Smartphones</h2>
@@ -678,7 +678,7 @@
 		    <ul>
 		       <li>Fügen Sie in den Einstellungen ein neues <i>Exchange</i> Profil hinzu.</li>
 		       <li>Wählen Sie die manuelle Konfiguration</li>
-		       <li>Achten Sie darauf das die VM nicht per SSL erreichbar ist.</li>
+		       <li>Der Webserver in der Virtuellen Maschine akzeptiert sowohl verschlüsselte (SSL) als auch unverschlüsselte Verbindungen.</li>
 		    </ul>
 		</section>
 		<section>
@@ -889,7 +889,7 @@
 		  <section>
 		    <h2>Migrationstool (4)</h2>
 		      <img src="images/mt4.png" width="60%">
-		      <p>Zugangsdaten für Zarafa mit Administrator Account. demo1 mit Passwort demo1 ist als Administrator vorkonfiguriert. SSL ist mit DemoVM nicht möglich.</p>
+		      <p>Zugangsdaten für Zarafa mit Administrator Account. demo1 mit Passwort demo1 ist als Administrator vorkonfiguriert.</p>
 		    </section>
 		  <section>
 		    <h2>Migrationstool (5)</h2>
