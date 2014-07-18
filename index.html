@@ -373,7 +373,7 @@
 	        <section>
 	             <h2>Mailzustellung</h2>
 	             <ul>
-	                 <li>Um E-Mails nicht direkt zuzustellen muß der eigentlich zuständige E-Mailserver konfiguriert werden.</li>
+       	                 <li>Wenn Sie nicht möchten, das E-Mails direkt aus der VM ins Internet zugestellt werden, müssen Sie den Mailserver entsprechend konfigurieren.</li>
 	                 <li>Konfiguration in der Datei <i>/etc/postfix/main.cf</i></li>
 	                 <li>Beispielkonfiguration:<br>
 	                   <i>relayhost = [ipadresse]</i><br>
@@ -427,8 +427,9 @@
 			  <li>Die VM ist für die Deutsche Sprache vorkonfiguriert.</li>
 			  <li>Die Konfiguration für die Sprache von Zarafa findet in der Datei <i>/etc/sysconfig/zarafa</i> statt.</li>
 			  <li>Die Sprache für die Zarafa Dienste und die öffentlichen Ordner wird in der Variable <b>ZARAFA_LOCALE</b> festgelegt.</li>
-			  <li>Die Sprache für die Ordner in den Postfächern wird in der Variable <b>ZARAFA_USERSCRIPT_LOCALE</b> festgelegt.</li>
-			  <li>Die Einstellungen greifen nur für nach der Konfiguration angelegte Ordner.</li>			  
+			  <li>Die Sprache für die Benutzerpostfächer wird in der Variable <b>ZARAFA_USERSCRIPT_LOCALE</b> festgelegt.</li>
+			  <li>Die Einstellungen greifen nur für nach der Konfiguration angelegte
+			  Benutzer und deren Ordner.</li>			  
 			</ul>
 		</section>
 	         
@@ -624,7 +625,7 @@
 		</section>
 		<section>
 		    <h2>Installation Zarafaclient</h2>
-		    <p>Das Migrationstool ist in der VM enthalten und kann vom Windowsdesktop per Webbrowser heruntergeladen und installiert werden</p>
+		    <p>Der Zarafaclient ist in der VM enthalten und kann vom Windowsdesktop per Webbrowser heruntergeladen und installiert werden</p>
 		    URL: <b>http://[ipadresseVM]/tools/zarafaclient-7.1.10-44973.msi</b><br><br>
 		    Der Zarafaclient muß vor allen weiteren Schritten auf dem Desktop installiert werden. Wählen Sie dazu idealerweise die vollständige Installation aus.
 		</section>
